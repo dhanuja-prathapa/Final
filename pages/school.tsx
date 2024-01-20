@@ -104,6 +104,13 @@ function School() {
     
 <div className={styles.wrapper}>
 <div className={styles.body}> 
+{screenSize === 'small' && (
+  <div>
+    <Text c='red.8' mx={20} mt={4} size='lg' ta='center' style={{ fontWeight: 'bold' }}>
+      Buddha Dhamma School International
+    </Text>
+  </div>
+)}
         <h4 className={styles.homeTitle}>School</h4>
       <Title order={5} c='blue' p='10'>School structure:</Title>
       <Text p='10px' size="sm" ta="center" c="teal.7">

@@ -10,6 +10,7 @@ import classes from '../pages/Demo.module.css';
 import { useMediaQuery } from 'react-responsive';
 import React from 'react';
 import MenuLinks from "./MenuLinks";
+import useMediaQueries from '../components/useMediaQueries';
 
 
 
@@ -40,7 +41,7 @@ const Header: React.FC<HeaderProps> = ({ searchTerm, setSearchTerm}) => {
     const { setColorScheme } = useMantineColorScheme();
     const computedColorScheme = useComputedColorScheme('light', { getInitialValueInEffect: true });
     
-  
+    const screenSize = useMediaQueries();
   
     const combobox = useCombobox({
       onDropdownClose: () => {
@@ -80,8 +81,15 @@ const Header: React.FC<HeaderProps> = ({ searchTerm, setSearchTerm}) => {
   
         <section style={{ display: 'flex', justifyContent: 'center', minHeight: 'auto' }}>
   
-        
-        <Text c='red.8' mx={20} mt={4} size='lg' style={{ fontWeight: 'bold' }}>Buddha Dhamma School International</Text>
+        {screenSize !== 'small' ? (
+  <div>
+    <Text c='red.8' mx={20} mt={4} size='lg' style={{ fontWeight: 'bold' }}>
+      Buddha Dhamma School International
+    </Text>
+  </div>
+) : null}
+
+
       <Combobox 
       onOptionSubmit={(optionValue) => {
         setValue(optionValue);

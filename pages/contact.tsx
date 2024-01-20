@@ -84,15 +84,27 @@ function Contact() {
     
 <div className={styles.wrapper}>
 <div className={styles.body}> 
+
+{screenSize === 'small' && (
+  <div>
+    <Text c='red.8' mx={20} mt={4} size='lg' ta='center' style={{ fontWeight: 'bold' }}>
+      Buddha Dhamma School International
+    </Text>
+  </div>
+)}
+
         <h4 className={styles.homeTitle}>Contact Us</h4>
     
       <Title order={5} c='blue' p='10' ta="center">Buddhist Counsellors:</Title>
-   
+    <Box style={{ margin: 'auto', display: 'flex', flexDirection: 'row', maxWidth: '400px' }}>
       <Image radius="md" h={200}
       w="auto"
       fit="contain" src='Rahu.png' alt='Dhanu' mx="auto"/>
+      <Image radius="md" h={200}
+      w="auto"
+      fit="contain" src='Rahu2.png' alt='Rahu2' mx="auto" style={{ marginLeft: '10px' }}/>
+    </Box>   
       <Text
-      
       p='10px' size="sm" ta="center" >
        Rahubadde Sarath-Chandra
       </Text>

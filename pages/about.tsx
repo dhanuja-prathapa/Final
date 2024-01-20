@@ -73,6 +73,13 @@ function About() {
     
 <div className={styles.wrapper}>
 <div className={styles.body}> 
+{screenSize === 'small' && (
+  <div>
+    <Text c='red.8' mx={20} mt={4} size='lg' ta='center' style={{ fontWeight: 'bold' }}>
+      Buddha Dhamma School International
+    </Text>
+  </div>
+)}
         <h4 className={styles.homeTitle}>About Us</h4>
       <Text p='10px' size="sm" ta="center" c="teal.7">
       The Buddha Dhamma School International (BDSI) is affiliated to the Queensland Sangha Association Inc, Brisbane, Australia, commonly called the QSA. QSA has provided services for about eighteen years mostly in Queensland and in Australia in a limited way.

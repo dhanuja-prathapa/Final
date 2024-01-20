@@ -73,6 +73,13 @@ export default function IndexPage() {
 </div>
     
     <div className={styles.wrapper}>
+    {screenSize === 'small' && (
+  <div>
+    <Text c='red.8' mx={20} mt={4} size='lg' ta='center' style={{ fontWeight: 'bold' }}>
+      Buddha Dhamma School International
+    </Text>
+  </div>
+)}
         <h4 className={styles.homeTitle}>Home Page</h4>
       <Box maw='auto' mx="auto">
       <BackgroundImage
