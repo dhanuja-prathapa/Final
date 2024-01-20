@@ -10,8 +10,15 @@ import useMediaQueries from '../components/useMediaQueries';
 import getItemsPerPage  from '../components/itemsPerPage';
 import classes from './Demo.module.css';
 import styles from './Demo.module.css';
+import { useMantineColorScheme } from '@mantine/core';
 
 function About() {
+
+  const { colorScheme } = useMantineColorScheme();
+
+  const headerStyle = {
+    '--header-background': colorScheme === 'dark' ? 'black' : 'white',
+  };
 
   const books: Book[] = booksData as Book[];
   const screenSize = useMediaQueries();
@@ -60,7 +67,7 @@ function About() {
   return (
     <>
     {/* Fixed Header */}
-<div className={classes.fixedHeader}>
+<div className={classes.fixedHeader} style={headerStyle}>
       <Header searchTerm={searchTerm} setSearchTerm={setSearchTerm} />    
 </div>
     

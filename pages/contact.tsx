@@ -10,6 +10,7 @@ import useMediaQueries from '../components/useMediaQueries';
 import getItemsPerPage  from '../components/itemsPerPage';
 import classes from './Demo.module.css';
 import styles from './Demo.module.css';
+import { useMantineColorScheme } from '@mantine/core';
 
 
 function Contact() {
@@ -20,6 +21,13 @@ function Contact() {
     setComputedColorScheme((prevScheme) => (prevScheme === 'light' ? 'dark' : 'light'));
   };
   
+  const { colorScheme } = useMantineColorScheme();
+
+  const headerStyle = {
+    '--header-background': colorScheme === 'dark' ? 'black' : 'white',
+  };
+  
+
   const books: Book[] = booksData as Book[];
   const screenSize = useMediaQueries();
   const [activePage, setActivePage] = useState(1);
@@ -68,17 +76,17 @@ function Contact() {
   return (
     <>
     {/* Fixed Header */}
-    <Box style={{ background: computedColorScheme === 'light' ? 'dark' : 'light' }}>
-<div className={classes.fixedHeader}>
+    
+<div className={classes.fixedHeader} style={headerStyle}>
       <Header searchTerm={searchTerm} setSearchTerm={setSearchTerm} />    
 </div>
-    </Box>
+  
     
 <div className={styles.wrapper}>
 <div className={styles.body}> 
         <h4 className={styles.homeTitle}>Contact Us</h4>
     
-      <Title order={5} c='blue' p='10'>Buddhist Counsellors:</Title>
+      <Title order={5} c='blue' p='10' ta="center">Buddhist Counsellors:</Title>
    
       <Image radius="md" h={200}
       w="auto"
@@ -103,7 +111,7 @@ function Contact() {
       linkedin.com/in/tanuja-sarath-chandra-5112501   -   Mobile: (+46)77 7665433
       </Text>
 
-      <Title order={5} c='blue' p='10'>IT Specialists:</Title>
+      <Title order={5} c='blue' p='10' ta="center">IT Specialists:</Title>
       <Image radius="md" h={200}
       w="auto"
       fit="contain" src='Dhanu.gif' alt='Dhanu' mx="auto"/>
