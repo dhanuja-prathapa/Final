@@ -139,7 +139,8 @@ Adults will find it useful to read from the grade 1 book upwards though they mig
       </Grid>
         </Container>
 
-    <Pagination style={{ marginBottom: '10px' }} value={activePage} onChange={setActivePage} total={Math.ceil(booksData.length / itemsPerPage)} withEdges />
+    <Pagination style={{ marginBottom: '10px', display: 'flex',
+    justifyContent: 'center' }} value={activePage} onChange={setActivePage} total={Math.ceil(booksData.length / itemsPerPage)} withEdges />
     <div>
     <Footer />
     </div>

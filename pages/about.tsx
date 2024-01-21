@@ -106,7 +106,8 @@ The novel systems adopted by BDSI draw a good deal from new areas.
       </Grid>
         </Container>
 
-    <Pagination style={{ marginBottom: '10px' }} value={activePage} onChange={setActivePage} total={Math.ceil(booksData.length / itemsPerPage)} withEdges />
+    <Pagination style={{ marginBottom: '10px', display: 'flex',
+    justifyContent: 'center' }} value={activePage} onChange={setActivePage} total={Math.ceil(booksData.length / itemsPerPage)} withEdges />
     <div>
     <Footer />
     </div>
