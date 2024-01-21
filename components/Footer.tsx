@@ -41,8 +41,12 @@ const Footer = () => {
         <a href="https://www.linkedin.com/in/tanuja-sarath-chandra-5112501/?originalSubdomain=au" target="_blank" rel="noopener noreferrer">
           <AiFillLinkedin />{" "}
         </a>
-        <a href="https://twitter.com/srf007" target="_blank" rel="noopener noreferrer">
-          <AiOutlineTwitter />{" "}
+        <a href="https://www.sanghaqld.org/" target="_blank" rel="noopener noreferrer">
+        <img
+        src="QSA.png"
+        alt="QSA Logo"
+        style={{ width: "34px", height: "34px"  }}
+      />{" "}
         </a>
         <a
           href="https://www.facebook.com/hapiness.the.buddhist.way"

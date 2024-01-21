@@ -95,6 +95,7 @@ function Contact() {
   </div>
 )}
 
+<Container style={{ margin: 'auto', display: 'flex', flexDirection: 'column', maxWidth: '1400px' }}>
         <h4 className={styles.homeTitle}>Contact Us</h4>
     
       <Title order={5} c='blue' p='10' ta="center">Buddhist Counsellors:</Title>
@@ -102,9 +103,11 @@ function Contact() {
       <Image radius="md" h={200}
       w="auto"
       fit="contain" src='Rahu.png' alt='Dhanu' mx="auto"/>
+      <div style={{ marginLeft: '20px' }}>
       <Image radius="md" h={200}
       w="auto"
-      fit="contain" src='Rahu2.png' alt='Rahu2' mx="auto" style={{ marginLeft: '10px' }}/>
+      fit="contain" src='Rahu2.png' alt='Rahu2' mx="auto"/>
+      </div>
     </Box>   
       <Text
       p='10px' size="sm" ta="center" >
@@ -114,7 +117,7 @@ function Contact() {
       Email: rahubadde@gmail.com   -   Mobile: (+46)77 8765689
       </Text>
       <Image radius="md" h={200}
-      w="auto"
+      w={200}
       fit="contain" src='Tanuja.jpeg' alt='Dhanu' mx="auto"/>
       <Text
        style={{ color: computedColorScheme === 'light' ? 'dark' : 'light' }}
@@ -126,8 +129,8 @@ function Contact() {
       </Text>
 
       <Title order={5} c='blue' p='10' ta="center">IT Specialists:</Title>
-      <Image radius="md" h={200}
-      w="auto"
+      <Image radius="md" w={200} h={200}
+      
       fit="contain" src='Dhanu.gif' alt='Dhanu' mx="auto"/>
       <Text
        style={{ color: computedColorScheme === 'light' ? 'dark' : 'light' }}
@@ -138,8 +141,7 @@ function Contact() {
       Email: dhanujaprathapa@gmail.com   -   Mobile: (+46)77 6355267
       </Text>
 
-      <Image radius="md" h={200}
-      w="auto"
+      <Image radius="md" w={200} h={200}
       fit="contain" src='Neil.png' alt='Neil' mx="auto"/>
       <Text
        style={{ color: computedColorScheme === 'light' ? 'dark' : 'light' }}
@@ -147,6 +149,7 @@ function Contact() {
       <Text p='10px' size="sm" ta="center" c="teal.7">
       Email: neilranawake@yahoo.com   -   Mobile: (+94)77 2057719
       </Text>
+    </Container>
 
            {/* Grid Container for Books */}
            <Container size="xl" style={{ margin: 'auto', display: 'flex', flexDirection: 'row', maxWidth: '1400px' }}>
