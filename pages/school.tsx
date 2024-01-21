@@ -5,7 +5,7 @@ import booksData from "../components/books.json";
 import Book from "../components/Book";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { Text, Title, Grid, Container, Pagination } from '@mantine/core';
+import { Text, Title, Box, Grid, Container, Pagination } from '@mantine/core';
 import useMediaQueries from '../components/useMediaQueries';
 import getItemsPerPage  from '../components/itemsPerPage';
 import classes from './Demo.module.css';
@@ -111,6 +111,7 @@ function School() {
     </Text>
   </div>
 )}
+    <Box style={{ margin: 'auto', display: 'flex', flexDirection: 'column', maxWidth: '1400px' }}>
         <h4 className={styles.homeTitle}>School</h4>
       <Title order={5} c='blue' p='10'>School structure:</Title>
       <Text p='10px' size="sm" ta="center" c="teal.7">
@@ -124,18 +125,19 @@ Material suited to individuals is covered in the self-development level.
 Adults will find it useful to read from the grade 1 book upwards though they might think these are too simple. Looking at these closely, the material is not that simple. The material might be easy to understand. This is suggested irrespective of whether the reader is a Buddhist or otherwise. It will also equip them to becomes teachers, or Buddhist Counsellors in the future. 
 
       </Text>
+      </Box>
 
-      {/* Grid Container for Books */}
-      <Container size="xl" className="" >
-      <Grid justify="center" gutter='sm' >
+       {/* Grid Container for Books */}
+       <Container size="xl" style={{ margin: 'auto', display: 'flex', flexDirection: 'row', maxWidth: '1400px' }}>
+      <Grid justify="center" align="flex-start" gutter={{ base: 5, xs: 'sm', md: 'xl', lg:'lg', xl: 150 }} >
         {filteredBooks.map((book, index) => (
-          <Grid.Col span={{ xs: 12, sm: 6, md: 5, lg: 4, xl: 3 }} key={index} className="flex-row-md" style={{ marginBottom: '16px' }}>
+          <Grid.Col span={{ xs: 12, sm: 6, md: 5, lg: 4, xl: 3 }} key={index} style={{ margin: 'auto', display: 'flex', flexDirection: 'row', marginBottom: '16px'}}>
             <Book book={book} />
             
           </Grid.Col>
         ))}
       </Grid>
-    </Container>
+        </Container>
 
     <Pagination style={{ marginBottom: '10px' }} value={activePage} onChange={setActivePage} total={Math.ceil(booksData.length / itemsPerPage)} withEdges />
     <div>

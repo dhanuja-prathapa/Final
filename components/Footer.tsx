@@ -38,7 +38,7 @@ const Footer = () => {
         <a href="https://www.youtube.com/@HappinesstheBuddhistWay/videos" target="_blank" rel="noopener noreferrer">
         <IoLogoYoutube />{" "}
         </a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.linkedin.com/in/tanuja-sarath-chandra-5112501/?originalSubdomain=au" target="_blank" rel="noopener noreferrer">
           <AiFillLinkedin />{" "}
         </a>
         <a href="https://twitter.com/srf007" target="_blank" rel="noopener noreferrer">

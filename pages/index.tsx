@@ -97,17 +97,17 @@ export default function IndexPage() {
       
     </Box>
 
-      {/* Grid Container for Books */}
-      <Container size="xl" className="" >
-      <Grid justify="center" gutter='sm' >
+  {/* Grid Container for Books */}
+  <Container size="xl" style={{ margin: 'auto', display: 'flex', flexDirection: 'row', maxWidth: '1400px' }}>
+      <Grid justify="center" align="flex-start" gutter={{ base: 5, xs: 'sm', md: 'xl', lg:'lg', xl: 150 }} >
         {filteredBooks.map((book, index) => (
-          <Grid.Col span={{ xs: 12, sm: 6, md: 5, lg: 4, xl: 3 }} key={index} className="flex-row-md" style={{ marginBottom: '16px' }}>
+          <Grid.Col span={{ xs: 12, sm: 6, md: 5, lg: 4, xl: 3 }} key={index} style={{ margin: 'auto', display: 'flex', flexDirection: 'row', marginBottom: '16px'}}>
             <Book book={book} />
             
           </Grid.Col>
         ))}
       </Grid>
-    </Container>
+        </Container>
 
     <Pagination style={{ marginBottom: '10px' }} value={activePage} onChange={setActivePage} total={Math.ceil(booksData.length / itemsPerPage)} withEdges />
     <div>

@@ -46,6 +46,7 @@
   box-sizing: border-box; /* Include padding in the total height */
   overflow-y: ''; /* Enable scrolling for the content */
   height: calc(100vh - 0px); /* Set the height to the viewport height */
+  /*z-index: 10; /* Adjust the z-index as needed */
 }
 
 .homeTitle {

@@ -5,7 +5,7 @@ import booksData from "../components/books.json";
 import Book from "../components/Book";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { Text, Title, Grid, Container, Pagination } from '@mantine/core';
+import { Text, Box, Grid, Container, Pagination } from '@mantine/core';
 import useMediaQueries from '../components/useMediaQueries';
 import getItemsPerPage  from '../components/itemsPerPage';
 import classes from './Demo.module.css';
@@ -80,6 +80,7 @@ function About() {
     </Text>
   </div>
 )}
+       <Box style={{ margin: 'auto', display: 'flex', flexDirection: 'column', maxWidth: '1400px' }}>
         <h4 className={styles.homeTitle}>About Us</h4>
       <Text p='10px' size="sm" ta="center" c="teal.7">
       The Buddha Dhamma School International (BDSI) is affiliated to the Queensland Sangha Association Inc, Brisbane, Australia, commonly called the QSA. QSA has provided services for about eighteen years mostly in Queensland and in Australia in a limited way.
@@ -91,18 +92,19 @@ There is a need to examine the application of technology in teaching. Informatio
 The novel systems adopted by BDSI draw a good deal from new areas.
 
       </Text>
-
-      {/* Grid Container for Books */}
-      <Container size="xl" className="" >
-      <Grid justify="center" gutter='sm' >
+      </Box>
+      
+       {/* Grid Container for Books */}
+       <Container size="xl" style={{ margin: 'auto', display: 'flex', flexDirection: 'row', maxWidth: '1400px' }}>
+      <Grid justify="center" align="flex-start" gutter={{ base: 5, xs: 'sm', md: 'xl', lg:'lg', xl: 150 }} >
         {filteredBooks.map((book, index) => (
-          <Grid.Col span={{ xs: 12, sm: 6, md: 5, lg: 4, xl: 3 }} key={index} className="flex-row-md" style={{ marginBottom: '16px' }}>
+          <Grid.Col span={{ xs: 12, sm: 6, md: 5, lg: 4, xl: 3 }} key={index} style={{ margin: 'auto', display: 'flex', flexDirection: 'row', marginBottom: '16px'}}>
             <Book book={book} />
             
           </Grid.Col>
         ))}
       </Grid>
-    </Container>
+        </Container>
 
     <Pagination style={{ marginBottom: '10px' }} value={activePage} onChange={setActivePage} total={Math.ceil(booksData.length / itemsPerPage)} withEdges />
     <div>

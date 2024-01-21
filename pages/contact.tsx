@@ -1,6 +1,6 @@
 'use client'
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import booksData from "../components/books.json";
 import Book from "../components/Book";
 import Header from '../components/Header';
@@ -13,6 +13,7 @@ import styles from './Demo.module.css';
 import { useMantineColorScheme } from '@mantine/core';
 
 
+
 function Contact() {
 
   const [computedColorScheme, setComputedColorScheme] = useState('light');
@@ -23,10 +24,11 @@ function Contact() {
   
   const { colorScheme } = useMantineColorScheme();
 
-  const headerStyle = {
-    '--header-background': colorScheme === 'dark' ? 'black' : 'white',
-  };
-  
+  const headerStyle = useMemo(() => {
+    return {
+      '--header-background': colorScheme === 'dark' ? 'black' : 'white',
+    };
+  }, [colorScheme]);
 
   const books: Book[] = booksData as Book[];
   const screenSize = useMediaQueries();
@@ -136,26 +138,27 @@ function Contact() {
       Email: dhanujaprathapa@gmail.com   -   Mobile: (+46)77 6355267
       </Text>
 
+      <Image radius="md" h={200}
+      w="auto"
+      fit="contain" src='Neil.png' alt='Neil' mx="auto"/>
       <Text
        style={{ color: computedColorScheme === 'light' ? 'dark' : 'light' }}
-      p='10px' size="sm" ta="center">
-      Neil Ranawake
-      </Text>
+      p='10px' size="sm" ta="center">Neil Ranawake</Text>
       <Text p='10px' size="sm" ta="center" c="teal.7">
       Email: neilranawake@yahoo.com   -   Mobile: (+94)77 2057719
       </Text>
 
            {/* Grid Container for Books */}
-           <Container size="xl" className="" >
-      <Grid justify="center" gutter='sm' >
+           <Container size="xl" style={{ margin: 'auto', display: 'flex', flexDirection: 'row', maxWidth: '1400px' }}>
+      <Grid justify="center" align="flex-start" gutter={{ base: 5, xs: 'sm', md: 'xl', lg:'lg', xl: 150 }} >
         {filteredBooks.map((book, index) => (
-          <Grid.Col span={{ xs: 12, sm: 6, md: 5, lg: 4, xl: 3 }} key={index} className="flex-row-md" style={{ marginBottom: '16px' }}>
+          <Grid.Col span={{ xs: 12, sm: 6, md: 5, lg: 4, xl: 3 }} key={index} style={{ margin: 'auto', display: 'flex', flexDirection: 'row', marginBottom: '16px'}}>
             <Book book={book} />
             
           </Grid.Col>
         ))}
       </Grid>
-    </Container>
+        </Container>
 
     <Pagination style={{ marginBottom: '10px' }} value={activePage} onChange={setActivePage} total={Math.ceil(booksData.length / itemsPerPage)} withEdges />
     <div>
