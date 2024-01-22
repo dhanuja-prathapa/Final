@@ -192,7 +192,7 @@ function Contact() {
         Call Mobile:   
       </Text>
         <a href="tel:+94772057719" color="blue" style={{ marginLeft: '5px' }}>
-           (+94)77 2057719
+           (+94) 77 205 7719
         </a>
       </Box>
     </Container>

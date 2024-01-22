@@ -16,44 +16,44 @@
         "imageLink": "/Czech.gif"
     },
     {
-        "title": "Primary Grade 1",
-        "author": "Author: Neil Ranawake",
-        "genre": ["Politics", "History", "Other"],
-        "published": "Published: 2000", 
-        "downloadLink": "https://drive.google.com/file/d/1SnoEqZbpvoh6Qd4rzGrJPnM1dElHQhhf/view?usp=drive_link",
-        "imageLink": "/Raja.gif"
+        "title": "Grade 1 Teacher's Manual",
+        "author": "Author: Rahubadde Sarath-Chandra",
+        "genre": ["Buddhism"],
+        "published": "Published: 2023", 
+        "downloadLink": "/Grade 1TM.pdf",
+        "imageLink": "/Cover.png"
     },
     {
-        "title": "Primary Grade 2",
-        "author": "Author: Neil Ranawake",
-        "genre": ["Politics","Other"],
-        "published": "Published: 2005",
-        "downloadLink": "https://drive.google.com/file/d/1t4OQMGxzmk1nmKON0x2Ylmm2nVjrmVK7/view?usp=drive_link",
-        "imageLink": "/Czech.gif"
+        "title": "Grade 2 Teacher's Manual",
+        "author": "Author: Rahubadde Sarath-Chandra",
+        "genre": ["Buddhism"],
+        "published": "Published: 2023",
+        "downloadLink": "/Grade 2TM.pdf",
+        "imageLink": "/Cover.png"
     },
     {
-        "title": "Secondary Grade 7",
-        "author": "Author: Neil Ranawake",
-        "genre": ["Politics", "History", "Other"],
-        "published": "Published: 2000", 
-        "downloadLink": "https://drive.google.com/file/d/1SnoEqZbpvoh6Qd4rzGrJPnM1dElHQhhf/view?usp=drive_link",
-        "imageLink": "/Raja.gif"
+        "title": "Grade 3 Teacher's Manual",
+        "author": "Author: Rahubadde Sarath-Chandra",
+        "genre": ["Buddhism"],
+        "published": "Published: 2023", 
+        "downloadLink": "/Grade 3TM.pdf",
+        "imageLink": "/Cover.png"
     },
     {
-        "title": "Secondary Grade 8",
-        "author": "Author: Neil Ranawake",
-        "genre": ["Politics","Other"],
-        "published": "Published: 2005",
-        "downloadLink": "https://drive.google.com/file/d/1t4OQMGxzmk1nmKON0x2Ylmm2nVjrmVK7/view?usp=drive_link",
-        "imageLink": "/Czech.gif"
+        "title": "Grade 4",
+        "author": "Author: Rahubadde Sarath-Chandra",
+        "genre": ["Buddhism"],
+        "published": "Published: 2023",
+        "downloadLink": "/Grade 4.pdf",
+        "imageLink": "/Cover.png"
     },
     {
-        "title": "Post Secondary Book 1",
-        "author": "Author: Neil Ranawake",
-        "genre": ["Politics", "History", "Other"],
-        "published": "Published: 2000", 
-        "downloadLink": "https://drive.google.com/file/d/1SnoEqZbpvoh6Qd4rzGrJPnM1dElHQhhf/view?usp=drive_link",
-        "imageLink": "/Raja.gif"
+        "title": "Grade 5",
+        "author": "Author: Rahubadde Sarath-Chandra",
+        "genre": ["Buddhism"],
+        "published": "Published: 2023", 
+        "downloadLink": "/Grade 5.pdf",
+        "imageLink": "/Cover.png"
     },
     {
         "title": "Post Secondary Book 2",

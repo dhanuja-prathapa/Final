@@ -17,18 +17,16 @@ import { LuCopyright } from "react-icons/lu";
 
 const books = [
   
-  'Unfinished Endeavour of King Rajasinha 1',
-  'Split of Czechoslovakia and Tamil Eelam',
-  'Primary Grade 1',
-  'Primary Grade 2',
-  'Secondary Grade 7',
-  'Secondary Grade 8',
-  'Post Secondary Book 1',
-  'Post Secondary Book 2',
-  '🥦 Broccoli',
-  '🥕 Carrots',
-  '🍫 Chocolate',
-  '🍇 All',
+  "Unfinished Endeavour of King Rajasinha 1",
+  "Split of Czechoslovakia and Tamil Eelam",
+  "Grade 1 Teacher's Manual",
+  "Grade 2 Teacher's Manual",
+  "Grade 3 Teacher's Manual",
+  "Grade 4",
+  "Grade 5",
+  "Post Secondary Book 2",
+
+  "🍇 All",
 ];
 
 interface HeaderProps {
