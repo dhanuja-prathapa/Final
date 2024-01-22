@@ -7,7 +7,7 @@ import {
   AiFillFacebook,
 } from "react-icons/ai";
 import { IoLogoYoutube } from "react-icons/io";
-import {Text, Group, Container, Paper, Title } from '@mantine/core'
+import { Box, Text, Group, Container, Paper, Title } from '@mantine/core';
 
 const Footer = () => {
   return (
@@ -29,7 +29,12 @@ const Footer = () => {
   <Group style={{ display: 'flex', justifyContent: 'center', minHeight: 'auto' }}>
 
       <h4 className="text-base mb-1">Buddha Dhamma School International</h4>
+      <Box style={{ margin: 'auto', display: 'flex', flexDirection: 'row', maxWidth: '1000px' }}> 
         <Text>Owned by: Queensland Sangha Association Inc., Australia</Text>
+        <a href="tel:+61732789021" color="blue" style={{ marginLeft: '20px' }}>
+          Call us at +61 (07) 3278 9021
+        </a>
+      </Box>
         <Text className="opacity-50">Commenced on: 1 January 2024</Text>
       </Group>
       

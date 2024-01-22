@@ -99,7 +99,7 @@ function Contact() {
         <h4 className={styles.homeTitle}>Contact Us</h4>
     
       <Title order={5} c='blue' p='10' ta="center">Buddhist Counsellors:</Title>
-    <Box style={{ margin: 'auto', display: 'flex', flexDirection: 'row', maxWidth: '400px' }}>
+    <Box style={{ margin: 'auto', display: 'flex', flexDirection: 'row', maxWidth: '500px' }}>
       <Image radius="md" h={200}
       w="auto"
       fit="contain" src='Rahu.png' alt='Dhanu' mx="auto"/>
@@ -113,20 +113,43 @@ function Contact() {
       p='10px' size="sm" ta="center" >
        Rahubadde Sarath-Chandra
       </Text>
-      <Text p='10px' size="sm" ta="center" c="teal.7">
-      Email: rahubadde@gmail.com   -   Mobile: (+46)77 8765689
+      <Box style={{ margin: 'auto', display: 'flex', flexDirection: 'row', maxWidth: '1000px' }}> 
+      <Text p='3px' size="sm" ta="center" c="teal.7">
+      Email: -   
       </Text>
+      <a href="mailto:infoqsa@gmail.com" color="blue" style={{ marginLeft: '5px' }}>
+      infoqsa@gmail.com
+        </a>
+        <Text p='3px' size="sm" ta="center" c="teal.7" style={{ marginLeft: '10px' }}>
+        Call Mobile:   
+      </Text>
+        <a href="tel:+61732789021" color="blue" style={{ marginLeft: '5px' }}>
+           (+61) 732 789 021
+        </a>
+      </Box>
+     
       <Image radius="md" h={200}
       w={200}
-      fit="contain" src='Tanuja.jpeg' alt='Dhanu' mx="auto"/>
+      fit="contain" src='Tanuja.jpeg' alt='Dhanu' mx="auto" mt='10px'/>
       <Text
        style={{ color: computedColorScheme === 'light' ? 'dark' : 'light' }}
       p='10px' size="sm" ta="center" >
       Tanuja Yasanga Sarath-Chandra
       </Text>
-      <Text p='10px' size="sm" ta="center" c="teal.7">
-      linkedin.com/in/tanuja-sarath-chandra-5112501   -   Mobile: (+46)77 7665433
+      <Box style={{ margin: 'auto', display: 'flex', flexDirection: 'row', maxWidth: '1000px' }}> 
+      <Text p='3px' size="sm" ta="center" c="teal.7">
+      Email: -   
       </Text>
+      <a href="mailto:tanuja4@gmail.com" color="blue" style={{ marginLeft: '5px' }}>
+      tanuja4@gmail.com
+        </a>
+        <Text p='3px' size="sm" ta="center" c="teal.7" style={{ marginLeft: '10px' }}>
+        Call Mobile:   
+      </Text>
+        <a href="tel:+61413485411" color="blue" style={{ marginLeft: '5px' }}>
+           (+61) 413 485 411
+        </a>
+      </Box>
 
       <Title order={5} c='blue' p='10' ta="center">IT Specialists:</Title>
       <Image radius="md" w={200} h={200}
@@ -137,22 +160,45 @@ function Contact() {
       p='10px' size="sm" ta="center">
       Dhanuja Prathapa Ranawake
       </Text>
-      <Text p='10px' size="sm" ta="center" c="teal.7">
-      Email: dhanujaprathapa@gmail.com   -   Mobile: (+46)77 6355267
+      <Box style={{ margin: 'auto', display: 'flex', flexDirection: 'row', maxWidth: '1000px' }}> 
+      <Text p='3px' size="sm" ta="center" c="teal.7">
+      Email: -   
       </Text>
+      <a href="mailto:dhanujaprathapa@gmail.com" color="blue" style={{ marginLeft: '5px' }}>
+      dhanujaprathapa@gmail.com
+        </a>
+        <Text p='3px' size="sm" ta="center" c="teal.7" style={{ marginLeft: '10px' }}>
+        Call Mobile:   
+      </Text>
+        <a href="tel:+61472511125" color="blue" style={{ marginLeft: '5px' }}>
+           (+61) 472 511 125
+        </a>
+      </Box>
 
       <Image radius="md" w={200} h={200}
-      fit="contain" src='Neil.png' alt='Neil' mx="auto"/>
+      fit="contain" src='Neil.png' alt='Neil' mx="auto" mt='10px'/>
       <Text
        style={{ color: computedColorScheme === 'light' ? 'dark' : 'light' }}
       p='10px' size="sm" ta="center">Neil Ranawake</Text>
-      <Text p='10px' size="sm" ta="center" c="teal.7">
-      Email: neilranawake@yahoo.com   -   Mobile: (+94)77 2057719
+      
+      <Box style={{ margin: 'auto', display: 'flex', flexDirection: 'row', maxWidth: '1000px' }}> 
+      <Text p='3px' size="sm" ta="center" c="teal.7">
+      Email: -   
       </Text>
+      <a href="mailto:neilranawake@yahoo.com" color="blue" style={{ marginLeft: '5px' }}>
+      neilranawake@yahoo.com
+        </a>
+        <Text p='3px' size="sm" ta="center" c="teal.7" style={{ marginLeft: '10px' }}>
+        Call Mobile:   
+      </Text>
+        <a href="tel:+94772057719" color="blue" style={{ marginLeft: '5px' }}>
+           (+94)77 2057719
+        </a>
+      </Box>
     </Container>
 
            {/* Grid Container for Books */}
-           <Container size="2xl" style={{ margin: 'auto', display: 'flex', flexDirection: 'row', maxWidth: '1400px' }}>
+           <Container size="2xl" style={{ margin: 'auto', display: 'flex', flexDirection: 'row', maxWidth: '1400px', marginTop:'10px'}}>
       <Grid justify="center" align="flex-start" gutter='xl' >
         {filteredBooks.map((book, index) => (
           <Grid.Col span={{ xs: 12, sm: 6, md: 5, lg: 4, xl: 3 }} key={index} style={{ margin: 'auto', display: 'flex', flexDirection: 'row', marginBottom: '16px'}}>

@@ -28,7 +28,7 @@ const books = [
   '🥦 Broccoli',
   '🥕 Carrots',
   '🍫 Chocolate',
-  '🍇 Grapes',
+  '🍇 All',
 ];
 
 interface HeaderProps {
@@ -90,7 +90,7 @@ const Header: React.FC<HeaderProps> = ({ searchTerm, setSearchTerm}) => {
     </HoverCard.Target>
         <HoverCard.Dropdown>
           <Text size="sm">
-            Services Render Finances is a reputed organization that can be entrusted for any kind of IT Solutions. Visit Contact Us page for more details.
+            Services Render Finances is a reputed organization that can be highly entrusted for any kind of IT Solutions. Visit Contact Us page for more details.
           </Text>
         </HoverCard.Dropdown>
       </HoverCard>
