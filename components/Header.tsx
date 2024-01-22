@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { useMantineColorScheme, HoverCard, Flex } from '@mantine/core';
 import cx from 'clsx';
-import classes from '../pages/Demo.module.css';
+import classes from '../pages/styles.module.css';
 import { useMediaQuery } from 'react-responsive';
 import React from 'react';
 import MenuLinks from "./MenuLinks";
@@ -77,9 +77,9 @@ const Header: React.FC<HeaderProps> = ({ searchTerm, setSearchTerm}) => {
     return (
   
           <nav >
-         {/*<Box style={{ background:  'white !important' }}> */}
+        {/* <Box style={{ background: "var(--header-background, white)"  }}> */}
          <Group justify="">
-      <HoverCard width={280} shadow="md">
+      <HoverCard width={280} shadow="md" closeDelay={1000}>
         <HoverCard.Target>
       <Flex align="center">
       <Text mx={20} mt={10} size="xs">
@@ -179,7 +179,7 @@ const Header: React.FC<HeaderProps> = ({ searchTerm, setSearchTerm}) => {
           {/* Other content goes here */}
           
           </Group>
-          <Burger size="md" opened={drawerOpened} onClick={toggleDrawer} hiddenFrom='md' aria-label="Toggle navigation" />
+          <Burger size="md" opened={drawerOpened} onClick={toggleDrawer} hiddenFrom='md' aria-label="Toggle navigation" color='cyan'/>
           <Drawer position="left" opened={drawerOpened} onClose={closeDrawer} title={<span style={{ fontWeight: 'bold', color: 'blue', zIndex: 1000 }} >Menu</span>}>
   
           <div >

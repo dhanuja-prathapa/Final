@@ -5,11 +5,11 @@ import booksData from "../components/books.json";
 import Book from "../components/Book";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { Box, Image, Text, Title, Grid, Container, Pagination } from '@mantine/core';
+import { Center, Box, Image, Text, Title, Grid, Container, Pagination } from '@mantine/core';
 import useMediaQueries from '../components/useMediaQueries';
 import getItemsPerPage  from '../components/itemsPerPage';
-import classes from './Demo.module.css';
-import styles from './Demo.module.css';
+import classes from './styles.module.css';
+import styles from './styles.module.css';
 import { useMantineColorScheme } from '@mantine/core';
 
 
@@ -152,12 +152,13 @@ function Contact() {
     </Container>
 
            {/* Grid Container for Books */}
-           <Container size="xl" style={{ margin: 'auto', display: 'flex', flexDirection: 'row', maxWidth: '1400px' }}>
-      <Grid justify="center" align="flex-start" gutter={{ base: 5, xs: 'sm', md: 'xl', lg:'lg', xl: 150 }} >
+           <Container size="2xl" style={{ margin: 'auto', display: 'flex', flexDirection: 'row', maxWidth: '1400px' }}>
+      <Grid justify="center" align="flex-start" gutter='xl' >
         {filteredBooks.map((book, index) => (
           <Grid.Col span={{ xs: 12, sm: 6, md: 5, lg: 4, xl: 3 }} key={index} style={{ margin: 'auto', display: 'flex', flexDirection: 'row', marginBottom: '16px'}}>
+            <Center>
             <Book book={book} />
-            
+            </Center>
           </Grid.Col>
         ))}
       </Grid>
