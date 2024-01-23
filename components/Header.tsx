@@ -2,7 +2,7 @@
 import { TextInput, Box, Text, Group, Combobox, useCombobox, CloseButton, Drawer  } from "@mantine/core";
 import { ActionIcon, useComputedColorScheme, Burger  } from '@mantine/core';
 import { IconSun, IconMoon } from '@tabler/icons-react';
-import { useState } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { useMantineColorScheme, HoverCard, Flex } from '@mantine/core';
 import cx from 'clsx';
@@ -37,8 +37,28 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ searchTerm, setSearchTerm}) => {
 
-    const { setColorScheme } = useMantineColorScheme();
-    const computedColorScheme = useComputedColorScheme('light', { getInitialValueInEffect: true });
+const { setColorScheme } = useMantineColorScheme();
+{/*const computedColorScheme = useComputedColorScheme('light', { getInitialValueInEffect: true });*/}
+
+const [computedColorScheme, setComputedColorScheme] = useState('');
+const { colorScheme } = useMantineColorScheme();
+
+{/*const toggleColorScheme = () => {
+  setComputedColorScheme((prevScheme) => (prevScheme === 'light' ? 'dark' : 'light'));
+};*/}
+
+useEffect(() => {
+  // Set the initial color scheme based on the actual color scheme
+  setComputedColorScheme(colorScheme);
+}, [colorScheme]);
+
+const headerStyle = useMemo(() => {
+  return {
+    colorScheme: computedColorScheme,
+    '--header-background': computedColorScheme === 'dark' ? 'black' : 'white',
+  };
+}, [computedColorScheme]);
+
     
     const screenSize = useMediaQueries();
   
@@ -74,7 +94,7 @@ const Header: React.FC<HeaderProps> = ({ searchTerm, setSearchTerm}) => {
    
     return (
   
-          <nav >
+          <nav className={classes.fixedHeader} style={headerStyle}>
         {/* <Box style={{ background: "var(--header-background, white)"  }}> */}
          <Group justify="">
       <HoverCard width={280} shadow="md" closeDelay={1000}>

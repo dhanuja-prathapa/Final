@@ -8,17 +8,9 @@ import Footer from '../components/Footer';
 import { Center, Text, Title, Box, Grid, Container, Pagination } from '@mantine/core';
 import useMediaQueries from '../components/useMediaQueries';
 import getItemsPerPage  from '../components/itemsPerPage';
-import classes from './styles.module.css';
 import styles from './styles.module.css';
-import { useMantineColorScheme } from '@mantine/core';
 
 function School() {
-
-  const { colorScheme } = useMantineColorScheme();
-
-  const headerStyle = {
-    '--header-background': colorScheme === 'dark' ? 'black' : 'white',
-  };
 
   const books: Book[] = booksData as Book[];
   const screenSize = useMediaQueries();
@@ -65,40 +57,10 @@ function School() {
   }, [itemsPerPage, activePage, searchTerm, screenSize]);
   
 
-
-  {/*useEffect(() => {
-    // Filter books based on search term
-    const filtered = booksData.filter(
-      (book) => book.title.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-
-    // Update filteredBooks with the current range
-    const startIndex = (activePage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    const newFilteredBooks = filtered.slice(startIndex, endIndex);
-
-    // Update filteredBooks only if there are results or when searchTerm is empty
-    if (filtered.length > 0) {
-      setFilteredBooks(newFilteredBooks);
-    } else {
-      // If no results and searchTerm is not empty, reset to all books
-      setFilteredBooks(booksData.slice(startIndex, endIndex));
-    }
-
-    // Ensure active page doesn't exceed the total number of pages
-    const totalPages = Math.ceil((filtered.length || booksData.length) / itemsPerPage);
-    const validActivePage = activePage > totalPages ? totalPages : activePage;
-
-    // Update active page to a valid page if needed
-    if (activePage !== validActivePage) {
-      setActivePage(validActivePage);
-    }
-  }, [filteredBooks, itemsPerPage, activePage, searchTerm, screenSize]);*/}
-  
   return (
   <>
   {/* Fixed Header */}
-<div className={classes.fixedHeader} style={headerStyle}>
+<div >
       <Header searchTerm={searchTerm} setSearchTerm={setSearchTerm} />    
 </div>
     

@@ -1,6 +1,6 @@
 'use client'
 import React from 'react';
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import booksData from "../components/books.json";
 import Book from "../components/Book";
 import Header from '../components/Header';
@@ -8,27 +8,11 @@ import Footer from '../components/Footer';
 import { Center, Box, Image, Text, Title, Grid, Container, Pagination } from '@mantine/core';
 import useMediaQueries from '../components/useMediaQueries';
 import getItemsPerPage  from '../components/itemsPerPage';
-import classes from './styles.module.css';
 import styles from './styles.module.css';
-import { useMantineColorScheme } from '@mantine/core';
 
 
 
 function Contact() {
-
-  const [computedColorScheme, setComputedColorScheme] = useState('light');
-
-  const toggleColorScheme = () => {
-    setComputedColorScheme((prevScheme) => (prevScheme === 'light' ? 'dark' : 'light'));
-  };
-  
-  const { colorScheme } = useMantineColorScheme();
-
-  const headerStyle = useMemo(() => {
-    return {
-      '--header-background': colorScheme === 'dark' ? 'black' : 'white',
-    };
-  }, [colorScheme]);
 
   const books: Book[] = booksData as Book[];
   const screenSize = useMediaQueries();
@@ -79,13 +63,13 @@ function Contact() {
     <>
     {/* Fixed Header */}
     
-<div className={classes.fixedHeader} style={headerStyle}>
+<div >
       <Header searchTerm={searchTerm} setSearchTerm={setSearchTerm} />    
 </div>
   
     
 <div className={styles.wrapper}>
-<div className={styles.body}> 
+<div className={styles.body}>
 
 {screenSize === 'small' && (
   <div>
@@ -115,13 +99,13 @@ function Contact() {
       </Text>
       <Box style={{ margin: 'auto', display: 'flex', flexDirection: 'row', maxWidth: '1000px' }}> 
       <Text p='3px' size="sm" ta="center" c="teal.7">
-      Email: -   
+      Email:  
       </Text>
       <a href="mailto:infoqsa@gmail.com" color="blue" style={{ marginLeft: '5px' }}>
       infoqsa@gmail.com
         </a>
         <Text p='3px' size="sm" ta="center" c="teal.7" style={{ marginLeft: '10px' }}>
-        Call Mobile:   
+        Mobile:   
       </Text>
         <a href="tel:+61732789021" color="blue" style={{ marginLeft: '5px' }}>
            (+61) 732 789 021
@@ -131,20 +115,24 @@ function Contact() {
       <Image radius="md" h={200}
       w={200}
       fit="contain" src='Tanuja.jpeg' alt='Dhanu' mx="auto" mt='10px'/>
-      <Text
+     {/*} <Text
        style={{ color: computedColorScheme === 'light' ? 'dark' : 'light' }}
+      p='10px' size="sm" ta="center" >
+      Tanuja Yasanga Sarath-Chandra
+</Text>*/}
+      <Text
       p='10px' size="sm" ta="center" >
       Tanuja Yasanga Sarath-Chandra
       </Text>
       <Box style={{ margin: 'auto', display: 'flex', flexDirection: 'row', maxWidth: '1000px' }}> 
       <Text p='3px' size="sm" ta="center" c="teal.7">
-      Email: -   
+      Email:   
       </Text>
       <a href="mailto:tanuja4@gmail.com" color="blue" style={{ marginLeft: '5px' }}>
       tanuja4@gmail.com
         </a>
         <Text p='3px' size="sm" ta="center" c="teal.7" style={{ marginLeft: '10px' }}>
-        Call Mobile:   
+        Mobile:   
       </Text>
         <a href="tel:+61413485411" color="blue" style={{ marginLeft: '5px' }}>
            (+61) 413 485 411
@@ -156,19 +144,18 @@ function Contact() {
       
       fit="contain" src='Dhanu.gif' alt='Dhanu' mx="auto"/>
       <Text
-       style={{ color: computedColorScheme === 'light' ? 'dark' : 'light' }}
       p='10px' size="sm" ta="center">
       Dhanuja Prathapa Ranawake
       </Text>
       <Box style={{ margin: 'auto', display: 'flex', flexDirection: 'row', maxWidth: '1000px' }}> 
       <Text p='3px' size="sm" ta="center" c="teal.7">
-      Email: -   
+      Email:   
       </Text>
       <a href="mailto:dhanujaprathapa@gmail.com" color="blue" style={{ marginLeft: '5px' }}>
       dhanujaprathapa@gmail.com
         </a>
         <Text p='3px' size="sm" ta="center" c="teal.7" style={{ marginLeft: '10px' }}>
-        Call Mobile:   
+        Mobile:   
       </Text>
         <a href="tel:+61472511125" color="blue" style={{ marginLeft: '5px' }}>
            (+61) 472 511 125
@@ -178,18 +165,17 @@ function Contact() {
       <Image radius="md" w={200} h={200}
       fit="contain" src='Neil.png' alt='Neil' mx="auto" mt='10px'/>
       <Text
-       style={{ color: computedColorScheme === 'light' ? 'dark' : 'light' }}
       p='10px' size="sm" ta="center">Neil Ranawake</Text>
       
       <Box style={{ margin: 'auto', display: 'flex', flexDirection: 'row', maxWidth: '1000px' }}> 
       <Text p='3px' size="sm" ta="center" c="teal.7">
-      Email: -   
+      Email:   
       </Text>
       <a href="mailto:neilranawake@yahoo.com" color="blue" style={{ marginLeft: '5px' }}>
       neilranawake@yahoo.com
         </a>
         <Text p='3px' size="sm" ta="center" c="teal.7" style={{ marginLeft: '10px' }}>
-        Call Mobile:   
+        Mobile:   
       </Text>
         <a href="tel:+94772057719" color="blue" style={{ marginLeft: '5px' }}>
            (+94) 77 205 7719
