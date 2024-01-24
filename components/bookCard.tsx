@@ -1,10 +1,11 @@
-// components/Book.tsx
+// components/bookCard.tsx
 import React from "react";
 import Image from "next/image";
 import { Paper, Text, Title } from "@mantine/core";
 
-interface BookProps {
+export interface BookProps {
   book: {
+    
     title: string;
     author: string;
     genre: string;

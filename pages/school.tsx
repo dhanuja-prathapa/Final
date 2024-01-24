@@ -2,20 +2,20 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import booksData from "../components/books.json";
-import Book from "../components/Book";
+import Book, { BookProps } from "../components/bookCard";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { Center, Text, Title, Box, Grid, Container, Pagination } from '@mantine/core';
+import { Title, Center, Text, Box, Grid, Container, Pagination } from '@mantine/core';
 import useMediaQueries from '../components/useMediaQueries';
 import getItemsPerPage  from '../components/itemsPerPage';
 import styles from './styles.module.css';
 
 function School() {
 
-  const books: Book[] = booksData as Book[];
+  const books: BookProps[] = booksData.map((book) => ({ book }));
   const screenSize = useMediaQueries();
   const [activePage, setActivePage] = useState(1);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState<string | null>(null);
   const [filteredBooks, setFilteredBooks] = useState(booksData);
   const [itemsPerPage, setItemsPerPage] = useState(getItemsPerPage(screenSize));
 
@@ -28,7 +28,7 @@ function School() {
   useEffect(() => {
     // Filter books based on search term
     const filtered = booksData.filter(
-      (book) => book.title.toLowerCase().includes(searchTerm.toLowerCase())
+      (book) => book.title.toLowerCase().includes((searchTerm ?? "").toLowerCase())
     );
   
     // Ensure active page doesn't exceed the total number of pages

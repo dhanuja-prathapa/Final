@@ -52,10 +52,9 @@ const toggleColorScheme = () => {
 };
 
 useEffect(() => {
-  // Set the initial color scheme based on the actual color scheme
-  //setComputedColorScheme(colorScheme);
+ 
   if (headerRef.current) {
-    headerRef.current.style.setProperty(
+    (headerRef.current as HTMLDivElement).style.setProperty(
       '--header-background',
       computedColorScheme === 'dark' ? 'black' : 'white'
     );
