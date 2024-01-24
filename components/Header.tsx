@@ -2,7 +2,7 @@
 import { TextInput, Box, Text, Group, Combobox, useCombobox, CloseButton, Drawer  } from "@mantine/core";
 import { ActionIcon, useComputedColorScheme, Burger  } from '@mantine/core';
 import { IconSun, IconMoon } from '@tabler/icons-react';
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { useMantineColorScheme, HoverCard, Flex } from '@mantine/core';
 import cx from 'clsx';
@@ -37,25 +37,36 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ searchTerm, setSearchTerm}) => {
 
-const { setColorScheme } = useMantineColorScheme();
+  const headerRef = useRef(null);
+  const { setColorScheme } = useMantineColorScheme();
+  const { colorScheme } = useMantineColorScheme();
+  
 {/*const computedColorScheme = useComputedColorScheme('light', { getInitialValueInEffect: true });*/}
 
-const [computedColorScheme, setComputedColorScheme] = useState('');
-const { colorScheme } = useMantineColorScheme();
+const [computedColorScheme, setComputedColorScheme] = useState(colorScheme );
 
-{/*const toggleColorScheme = () => {
-  setComputedColorScheme((prevScheme) => (prevScheme === 'light' ? 'dark' : 'light'));
-};*/}
+const toggleColorScheme = () => {
+  const newColorScheme = computedColorScheme === 'light' ? 'dark' : 'light';
+  setComputedColorScheme(newColorScheme);
+  setColorScheme(newColorScheme);
+};
 
 useEffect(() => {
   // Set the initial color scheme based on the actual color scheme
-  setComputedColorScheme(colorScheme);
-}, [colorScheme]);
+  //setComputedColorScheme(colorScheme);
+  if (headerRef.current) {
+    headerRef.current.style.setProperty(
+      '--header-background',
+      computedColorScheme === 'dark' ? 'black' : 'white'
+    );
+  }
+}, [colorScheme, computedColorScheme]);
 
 const headerStyle = useMemo(() => {
+  const headerBackgroundColor = computedColorScheme === 'dark' ? 'black' : 'white';
   return {
     colorScheme: computedColorScheme,
-    '--header-background': computedColorScheme === 'dark' ? 'black' : 'white',
+    '--header-background':  headerBackgroundColor,
   };
 }, [computedColorScheme]);
 
@@ -94,8 +105,8 @@ const headerStyle = useMemo(() => {
    
     return (
   
-          <nav className={classes.fixedHeader} style={headerStyle}>
-        {/* <Box style={{ background: "var(--header-background, white)"  }}> */}
+          <nav className={classes.fixedHeader} ref={headerRef} style={headerStyle}>
+       
          <Group justify="">
       <HoverCard width={280} shadow="md" closeDelay={1000}>
         <HoverCard.Target>
@@ -176,9 +187,12 @@ const headerStyle = useMemo(() => {
       </Combobox.Dropdown>
     </Combobox>
   
+
+  {/*onClick={() => setColorScheme(computedColorScheme === 'light' ? 'dark' : 'light')}*/}
     <div style={{ display: 'flex', justifyContent: 'left' }}>      
     <ActionIcon mx={20}
-        onClick={() => setColorScheme(computedColorScheme === 'light' ? 'dark' : 'light')}
+        
+        onClick={toggleColorScheme}
         variant="default"
         size="36px"
         aria-label="Toggle color scheme"
@@ -213,9 +227,7 @@ const headerStyle = useMemo(() => {
           </Drawer>
     </Group>
     </section> 
-    {/*</Box>*/}
     </nav>
-  
     
       );
 

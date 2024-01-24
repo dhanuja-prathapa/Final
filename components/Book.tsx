@@ -22,7 +22,7 @@ const Book: React.FC<BookProps> = ({ book }) => {
       <Image src={book.imageLink} alt={book.title} width={340} height={470} />
       <Title order={5}>{book.title}</Title>
       <Text size="sm">{book.author}</Text>
-      <Text size="sm">Genre: {book.genre[0]}, {book.genre[1]}, {book.genre[2]}</Text>
+      <Text size="sm">Genre: {book.genre[0]}</Text>
       <Text size="sm">{book.published}</Text>
       <span className="text-blue-500 hover:text-red-700">
          Click on Card to Download

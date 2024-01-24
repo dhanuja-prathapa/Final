@@ -11,7 +11,6 @@ import getItemsPerPage  from '../components/itemsPerPage';
 import styles from './styles.module.css';
 
 
-
 function Contact() {
 
   const books: Book[] = booksData as Book[];
@@ -183,18 +182,18 @@ function Contact() {
       </Box>
     </Container>
 
-           {/* Grid Container for Books */}
-           <Container size="2xl" style={{ margin: 'auto', display: 'flex', flexDirection: 'row', maxWidth: '1400px', marginTop:'10px'}}>
-      <Grid justify="center" align="flex-start" gutter='xl' >
-        {filteredBooks.map((book, index) => (
-          <Grid.Col span={{ xs: 12, sm: 6, md: 5, lg: 4, xl: 3 }} key={index} style={{ margin: 'auto', display: 'flex', flexDirection: 'row', marginBottom: '16px'}}>
-            <Center>
-            <Book book={book} />
-            </Center>
-          </Grid.Col>
-        ))}
-      </Grid>
-        </Container>
+{/* Grid Container for Books */}
+<Container size="2xl" style={{ margin: 'auto', display: 'flex', flexDirection: 'row', maxWidth: '1400px', marginTop:'10px'}}>
+         <Grid justify="center" align="flex-start" gutter='xl' >
+           {filteredBooks.map((book, index) => (
+             <Grid.Col span={{ xs: 12, sm: 6, md: 5, lg: 4, xl: 3 }} key={index} style={{ margin: 'auto', display: 'flex', flexDirection: 'row', marginBottom: '16px'}}>
+               <Center>
+               <Book book={book} />
+               </Center>
+             </Grid.Col>
+           ))}
+         </Grid>
+           </Container>
 
     <Pagination style={{ marginBottom: '10px', display: 'flex',
     justifyContent: 'center'}} value={activePage} onChange={setActivePage} total={Math.ceil(booksData.length / itemsPerPage)} withEdges />
