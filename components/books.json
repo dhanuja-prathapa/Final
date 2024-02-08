@@ -1,65 +1,73 @@
 [
     {
-        "title": "Unfinished Endeavour of King Rajasinha 1",
-        "author": "Author: Neil Ranawake",
+        "id": 1,
+        "title": "Unfinished Endeavour of King Rajasingha 1",
+        "author": "Neil Ranawake",
         "genre": "History",
-        "published": "Published: 2000", 
+        "published": 2000, 
         "downloadLink": "https://drive.google.com/file/d/1SnoEqZbpvoh6Qd4rzGrJPnM1dElHQhhf/view?usp=drive_link",
         "imageLink": "/Raja.gif"
     },
     {
+        "id": 2,
         "title": "Split of Czechoslovakia and Tamil Eelam",
-        "author": "Author: Neil Ranawake",
+        "author": "Neil Ranawake",
         "genre": "Politics",
-        "published": "Published: 2005",
+        "published": 2005,
         "downloadLink": "https://drive.google.com/file/d/1t4OQMGxzmk1nmKON0x2Ylmm2nVjrmVK7/view?usp=drive_link",
         "imageLink": "/Czech.gif"
     },
     {
+        "id": 3,
         "title": "Grade 1 Teacher's Manual",
-        "author": "Author: Rahubadde Sarath-Chandra",
+        "author": "Rahubadde Sarath-Chandra",
         "genre": "Buddhism",
-        "published": "Published: 2023", 
+        "published": 2023, 
         "downloadLink": "/Grade 1TM.pdf",
         "imageLink": "/Cover.png"
     },
     {
+        "id": 4,
         "title": "Grade 2 Teacher's Manual",
-        "author": "Author: Rahubadde Sarath-Chandra",
+        "author": "Rahubadde Sarath-Chandra",
         "genre": "Buddhism",
-        "published": "Published: 2023",
+        "published": 2023,
         "downloadLink": "/Grade 2TM.pdf",
         "imageLink": "/Cover.png"
     },
     {
+        "id": 5,
         "title": "Grade 3 Teacher's Manual",
-        "author": "Author: Rahubadde Sarath-Chandra",
+        "author": "Rahubadde Sarath-Chandra",
         "genre": "Buddhism",
-        "published": "Published: 2023", 
+        "published": 2023, 
         "downloadLink": "/Grade 3TM.pdf",
         "imageLink": "/Cover.png"
     },
     {
+        "id": 6,
         "title": "Grade 4",
-        "author": "Author: Rahubadde Sarath-Chandra",
+        "author": "Rahubadde Sarath-Chandra",
         "genre": "Buddhism",
-        "published": "Published: 2023",
+        "published": 2023,
         "downloadLink": "/Grade 4.pdf",
         "imageLink": "/Cover4.png"
     },
     {
+        "id": 7,
         "title": "Grade 5",
-        "author": "Author: Rahubadde Sarath-Chandra",
+        "author": "Rahubadde Sarath-Chandra",
         "genre": "Buddhism",
-        "published": "Published: 2023", 
+        "published": 2023, 
         "downloadLink": "/Grade 5.pdf",
         "imageLink": "/Cover5.png"
     },
     {
+        "id": 8,
         "title": "Post Secondary Book 2",
-        "author": "Author: Neil Ranawake",
+        "author": "Neil Ranawake",
         "genre": "Politics",
-        "published": "Published: 2005",
+        "published": 2005,
         "downloadLink": "https://drive.google.com/file/d/1t4OQMGxzmk1nmKON0x2Ylmm2nVjrmVK7/view?usp=drive_link",
         "imageLink": "/Czech.gif"
     }

@@ -22,7 +22,7 @@ const links = [
         <Link key={link.label} href={link.url} passHref>
           {/* You can use either Button or Text, depending on your styling preference */}
       <Button style={{ marginRight: index < links.length - 1 ? '5px' : '0', marginBottom: '10px', backgroundColor: router.pathname === link.url ?  theme.colors.red[8]  : theme.colors.blue[7] ,
-              color: router.pathname === link.url ? 'white' : 'cyan', }}> 
+              color: router.pathname === link.url ? 'white' : 'white', }}> 
           {link.label}
       </Button>
       

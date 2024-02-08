@@ -1,69 +1,60 @@
 'use client'
 import React from 'react';
 import { useState, useEffect } from 'react';
-import booksData from "../components/books.json";
-import Book, { BookProps } from "../components/bookCard";
-import Header from '../components/Header';
+import Book, {BookProps} from "../components/myBookCard";
+import EasyHeader from '../components/EasyHeader';
 import Footer from '../components/Footer';
-import { Title, Image, Center, Text, Box, Grid, Container, Pagination } from '@mantine/core';
+import { Title, Image, Center, Text, Box, Grid, Container} from '@mantine/core';
 import useMediaQueries from '../components/useMediaQueries';
-import getItemsPerPage  from '../components/itemsPerPage';
 import styles from './styles.module.css';
 
 
-function Contact() {
+function Contact () {
 
-  const books: BookProps[] = booksData.map((book) => ({ book }));
+  const [booksData, setBooksData] = useState<any[]>([]);
+  //const books: BookProps[] = booksData.map((book) => ({ book }));
   const screenSize = useMediaQueries();
-  const [activePage, setActivePage] = useState(1);
-  const [searchTerm, setSearchTerm] = useState<string | null>(null);
-  const [filteredBooks, setFilteredBooks] = useState(booksData);
-  const [itemsPerPage, setItemsPerPage] = useState(getItemsPerPage(screenSize));
+  const [filteredBooks, setFilteredBooks] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
 
 
   useEffect(() => {
-    // Initialize itemsPerPage with the correct value based on screen size
-    setItemsPerPage(getItemsPerPage(screenSize));
-  }, [screenSize]);
+    console.log('booksData', booksData);
+    console.log('filteredBooks', filteredBooks);
+    
+  }, [booksData, filteredBooks]);
+  
 
-  useEffect(() => {
-    // Filter books based on search term
-    const filtered = booksData.filter(
-      (book) => book.title.toLowerCase().includes((searchTerm ?? "").toLowerCase())
-    );
-  
-    // Ensure active page doesn't exceed the total number of pages
-    const totalPages = Math.ceil((filtered.length || booksData.length) / itemsPerPage);
-    const validActivePage = activePage > totalPages ? totalPages : activePage;
-  
-    // Update active page to a valid page if needed
-    if (activePage !== validActivePage) {
-      setActivePage(validActivePage);
-    }
-  
-    // Update filteredBooks with the current range
-    const startIndex = (validActivePage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    const newFilteredBooks = filtered.slice(startIndex, endIndex);
-  
-    // Update filteredBooks only if there are results or when searchTerm is empty
-    setFilteredBooks((prevFilteredBooks) => {
-      if (filtered.length > 0) {
-        return newFilteredBooks;
-      } else {
-        // If no results and searchTerm is not empty, reset to all books
-        return booksData.slice(startIndex, endIndex);
+   // Use the useEffect hook to fetch data when the component mounts
+   useEffect(() => {
+    // Define a function to fetch books from the server
+    const fetchmyBooksData = async () => {
+      try {
+        // Make a GET request to your server's /books endpoint
+        const response = await fetch('http://localhost:5000/myBooks');
+        const data = await response.json();
+
+        // Update the state with the fetched data
+        setBooksData(data);
+        setFilteredBooks(data);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching books:', error);
       }
-    });
-  }, [itemsPerPage, activePage, searchTerm, screenSize]);
+    };
 
+    // Call the fetchBooks function
+    fetchmyBooksData();
+   
+  }, []); // The empty dependency array ensures that the effect runs only once when the component mounts
+ 
 
   return (
     <>
     {/* Fixed Header */}
     
 <div >
-      <Header searchTerm={searchTerm} setSearchTerm={setSearchTerm} />    
+      <EasyHeader/>    
 </div>
   
     
@@ -181,22 +172,25 @@ function Contact() {
         </a>
       </Box>
     </Container>
+    <Container style={{ margin: 'auto', display: 'flex', flexDirection: 'column', maxWidth: '800px' }}>
+    <Text p='3px' mt='10px' mb='10px' size="sm" ta="center" style={{ marginLeft: '10px' }}> As an author, Neil Ranawake has published two books in sinhala language for the Sri Lankan community in close association of Most Ven Madihe Pannasiha Thero, Ven Gangodawila Soma Thero, Ven Maduluwave Sobhitha Thero etc. who also took precedence at the book launch. You are kindly invited to download and read them 
+    </Text>
+    </Container>
 
 {/* Grid Container for Books */}
-<Container size="2xl" style={{ margin: 'auto', display: 'flex', flexDirection: 'row', maxWidth: '1400px', marginTop:'10px'}}>
-         <Grid justify="center" align="flex-start" gutter='xl' >
-           {filteredBooks.map((book, index) => (
-             <Grid.Col span={{ xs: 12, sm: 6, md: 5, lg: 4, xl: 3 }} key={index} style={{ margin: 'auto', display: 'flex', flexDirection: 'row', marginBottom: '16px'}}>
-               <Center>
+{filteredBooks.length > 0 ? (
+<Container style={{ margin: 'auto', display: 'flex', flexWrap: 'wrap', marginTop:'10px'}}>
+           {filteredBooks.map((book, index) => ( 
+               <Center key={index} style={{ margin: 'auto', display: 'flex', marginBottom: '16px'}}>
                <Book book={book} />
                </Center>
-             </Grid.Col>
-           ))}
-         </Grid>
-           </Container>
+           ))}        
+</Container>
+           
+) : (
+  
+  <p>Database not connected ! No books to display...</p>)}
 
-    <Pagination style={{ marginBottom: '10px', display: 'flex',
-    justifyContent: 'center'}} value={activePage} onChange={setActivePage} total={Math.ceil(booksData.length / itemsPerPage)} withEdges />
     <div>
     <Footer />
     </div>
