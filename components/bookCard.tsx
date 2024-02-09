@@ -87,6 +87,7 @@ const Book: React.FC<BookProps> = ({ book }) => {
   <div onClick={handleDownload}  className={styles.cardWrapper2}>
     <Paper shadow="md"  radius="md" className="p-4" style={{ maxWidth: 340, minWidth: 340 }} >
       <Image src={imageLink || ''} alt={title || ''} width={340} height={470} />
+    <div style={{ marginLeft: '10px' }}>  
       <Title order={5}>{title || 'No Title'}</Title>
       <Text size="sm">Author: {author || 'Unknown Author'}</Text>
       <Text size="sm">Genre: {genre || 'Unknown Genre'}</Text>
@@ -94,7 +95,7 @@ const Book: React.FC<BookProps> = ({ book }) => {
       <span className="text-blue-500 hover:text-red-700">
          Click on Card to Download
         </span>
-      
+      </div>
     </Paper>
   </div>
   

@@ -167,8 +167,8 @@ function Contact () {
         <Text p='3px' size="sm" ta="center" c="teal.7" style={{ marginLeft: '10px' }}>
         Mobile:   
       </Text>
-        <a href="tel:+94772057719" color="blue" style={{ marginLeft: '5px' }}>
-           (+94) 77 205 7719
+        <a href="tel:+94719707828" color="blue" style={{ marginLeft: '5px' }}>
+           (+94) 71 970 7828
         </a>
       </Box>
     </Container>

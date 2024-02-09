@@ -34,7 +34,7 @@ export default function IndexPage() {
     console.log('filteredBooks', filteredBooks);
     console.log('selected:', searchTerm);
     console.log('filtered', filteredLength);
-  }, [booksData, filteredBooks, searchTerm]);
+  }, [booksData, filteredBooks, searchTerm, filteredLength]);
  
    // Use the useEffect hook to fetch data when the component mounts
    useEffect(() => {
@@ -85,7 +85,7 @@ export default function IndexPage() {
     setFilteredBooks(newFilteredBooks);
     setFilteredLength(filtered.length);
 
-  }, [searchTerm, itemsPerPage, activePage, screenSize, booksData]);
+  }, [searchTerm, itemsPerPage, activePage, screenSize, booksData, filteredLength]);
   
   return (
 <>
