@@ -8,7 +8,6 @@ import { Title, Image, Center, Text, Box, Grid, Container} from '@mantine/core';
 import useMediaQueries from '../components/useMediaQueries';
 import styles from './styles.module.css';
 
-
 function Contact () {
 
   const [booksData, setBooksData] = useState<any[]>([]);
@@ -16,14 +15,6 @@ function Contact () {
   const screenSize = useMediaQueries();
   const [filteredBooks, setFilteredBooks] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
-
-
-  useEffect(() => {
-    console.log('booksData', booksData);
-    console.log('filteredBooks', filteredBooks);
-    
-  }, [booksData, filteredBooks]);
-  
 
    // Use the useEffect hook to fetch data when the component mounts
    useEffect(() => {
@@ -55,8 +46,7 @@ function Contact () {
     
 <div >
       <EasyHeader/>    
-</div>
-  
+</div>  
     
 <div className={styles.wrapper}>
 <div className={styles.body}>

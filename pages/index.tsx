@@ -1,7 +1,6 @@
 'use client'
 import React from 'react';
 import { useState, useEffect } from 'react';
-import booksData from "../components/books.json";
 import Book, { BookProps } from "../components/bookCard";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -29,13 +28,6 @@ export default function IndexPage() {
     setItemsPerPage(getItemsPerPage(screenSize));
   }, [screenSize]);
 
-  useEffect(() => {
-    console.log('booksData', booksData);
-    console.log('filteredBooks', filteredBooks);
-    console.log('selected:', searchTerm);
-    console.log('filtered', filteredLength);
-  }, [booksData, filteredBooks, searchTerm, filteredLength]);
- 
    // Use the useEffect hook to fetch data when the component mounts
    useEffect(() => {
     // Define a function to fetch books from the server

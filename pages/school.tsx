@@ -26,13 +26,6 @@ function School() {
     setItemsPerPage(getItemsPerPage(screenSize));
   }, [screenSize]);
 
-  useEffect(() => {
-    console.log('booksData', booksData);
-    console.log('filteredBooks', filteredBooks);
-    console.log('selected:', searchTerm);
-    console.log('filtered', filteredLength);
-  }, [booksData, filteredBooks, searchTerm, filteredLength]);
- 
    // Use the useEffect hook to fetch data when the component mounts
    useEffect(() => {
     // Define a function to fetch books from the server

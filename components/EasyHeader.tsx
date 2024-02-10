@@ -62,7 +62,7 @@ const headerStyle = useMemo(() => {
   
           <nav className={classes.fixedHeader} ref={headerRef} style={headerStyle}>
        
-         <Group justify="">
+         <Group>
       <HoverCard width={280} shadow="md" closeDelay={1000}>
         <HoverCard.Target>
       <Flex align="center">
