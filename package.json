@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev":  "concurrently \"next dev\" \"node server.js\"",
     "build": "next build",
-    "start": "next start",
+    "start": "concurrently \"next start\" \"node server.js\"",
     "lint": "next lint"
   },
   "dependencies": {
@@ -31,6 +31,7 @@
     "@types/node": "^20.8.10",
     "@types/react": "^18.2.35",
     "@types/react-dom": "^18.2.14",
+    "concurrently": "^8.2.2",
     "eslint": "8.53.0",
     "eslint-config-next": "14.0.1",
     "postcss": "^8.4.31",

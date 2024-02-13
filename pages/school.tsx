@@ -8,6 +8,8 @@ import { Title, Center, Text, Box, Grid, Container, Pagination } from '@mantine/
 import useMediaQueries from '../components/useMediaQueries';
 import getItemsPerPage  from '../components/itemsPerPage';
 import styles from './styles.module.css';
+import { exec } from 'child_process';
+import { useRouter } from 'next/router';
 
 function School() {
 
@@ -21,13 +23,15 @@ function School() {
   const [itemsPerPage, setItemsPerPage] = useState(getItemsPerPage(screenSize));
   const [loading, setLoading] = useState(true);
 
+  const router = useRouter();
+  
   useEffect(() => {
     // Initialize itemsPerPage with the correct value based on screen size
     setItemsPerPage(getItemsPerPage(screenSize));
   }, [screenSize]);
 
    // Use the useEffect hook to fetch data when the component mounts
-   useEffect(() => {
+   {/*useEffect(() => {
     // Define a function to fetch books from the server
     const fetchBooksData = async () => {
       try {
@@ -47,8 +51,31 @@ function School() {
     // Call the fetchBooks function
     fetchBooksData();
    
-  }, []); // The empty dependency array ensures that the effect runs only once when the component mounts
+  }, []);*/} // The empty dependency array ensures that the effect runs only once when the component mounts
  
+  useEffect(() => {
+    // Fetch books data when the component mounts
+    const fetchBooksData = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/books');
+        const data = await response.json();
+        setBooksData(data);
+        setFilteredBooks(data);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching books:', error);
+        // Execute API route to start server
+        try {
+          await fetch('/api/start-server');
+        } catch (error) {
+          console.error('Error starting server:', error);
+        }
+      }
+    };
+
+    fetchBooksData();
+  }, []);
+
   useEffect(() => {
     // Filter books based on search term
     const filtered = booksData.filter(({ title }) => {
